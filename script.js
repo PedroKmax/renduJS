@@ -10,34 +10,70 @@ fetch(API_URL)
     
     
     const hero = document.getElementById("hero");
-    const section1 = document.getElementById("section1");
-    const section2 = document.getElementById("section2");
+    const avantages = document.getElementById("Avantages");
+    const produits = document.getElementById("Produits");
+    const produitscards = document.getElementById("produits-card")
     const section3 = document.getElementById("section3");
 
-    let h1 = document.createElement("h1");
-    h1.textContent = data.nomCommercial;
-    hero.appendChild(h1);
 
-    let p1 = document.createElement("p1");
-    p1.textContent = data.phraseAccroche;
-    section1.appendChild(p1);
 
-    let a1 = document.createElement("a");
-    a1.textContent = data.texteAppelAction;
-    a1.href = "";
-    section1.appendChild(a1);
+        const h1 = document.createElement("h1");
+            h1.textContent = data.nomCommercial;
+            hero.appendChild(h1);
+ 
+            const para = document.createElement("p");
+            para.textContent = data.phraseAccroche;
+            hero.appendChild(para);
+ 
+            const texteAppelAction = document.createElement("a");
+            texteAppelAction.href = "";
+            texteAppelAction.textContent = data.texteAppelAction;
+            hero.appendChild(texteAppelAction);
+ 
+ 
+ 
+           
+            const h2 = document.createElement("h2");
+            h2.textContent = "Avantages Clients";
+            avantages.appendChild(h2);
+ 
+            data.avantagesClients.forEach(element => {
+                let listAvantage = document.createElement("div");
+                listAvantage.textContent = element;
+                avantages.appendChild(listAvantage);
+ 
+            });
+           
+            const h3 =document.createElement("h3");
+            titreH2.textContent = "produits";
+            produits.appendChild(h3);
+ 
+            data.produits.forEach(element => {
+                
+                let produitsCard = document.createElement("div");
+ 
+                let produitsimg = document.createElement("img")
+                produitsimg.src = element["image-url"];
+ 
+                produitsCard.appendChild(produitsimg);
+ 
+                let produitsName = document.createElement("h4");
+                produitsName.textContent = element.nom;
+ 
+                produitsCard.appendChild(produitsName);
+ 
+                let produitsDescription = document.createElement("p")
+                produitsDescription.textContent = element.description;
+ 
+                produitsCard.appendChild(produitsDescription);
+ 
+                produitscards.appendChild(produitsCard);
+ 
 
-    let h2 = document.createElement("h2")
-    h2.textContent = data.avatangesClients;
-    section2.appendChild(h2)
+              
+                });
+ 
+            });
 
-   
-    
-      data.avantagesClients.forEach(element => {
-         console.log(element);
-        const div = document.createElement("div");
-        div.textContent = element;
-        section2.appendChild(div);
-      });
 
-  });
+
