@@ -1,9 +1,17 @@
 body{
-  margin: 20px;
-  background-color: rgb(217, 242, 224);
+  margin: -5px;  
+  background-color: rgba(255, 255, 255, 0.769);
   display: flex;
   flex-direction: column;
-  color: rgb(0, 84, 45);
+  color:rgb(0, 84, 45);
+}
+
+nav{
+        display: flex;
+    justify-content: left;
+    align-items : center;
+    gap: 180px;
+    background-color: rgba(0, 84, 45, 0)
 }
 
 
@@ -15,7 +23,7 @@ li{
     font-family: "DM Sans", sans-serif;
 
     a{
-        color: rgb(0, 84, 45);
+        color: rgb(21, 84, 45);
         text-decoration: none;
     }
      
@@ -23,4 +31,35 @@ li{
 }
 ul{
         float: right;
+        button{
+            background-color: rgb(21, 84, 45);
+            height: 30px;
+            width: 50;
+            color: aliceblue;
+        }
     }
+
+
+#hero{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+    height: 400px;
+    background-image: url(Gemini_Generated_Image_qami7rqami7rqami.png);
+    background-size: cover;
+    font-family: monospace;
+    font-size: 18px;
+
+    color: rgb(21, 211, 122);
+
+}
+
+#avantages{
+    h2{
+        display: flex;
+    align-items: center;
+    }
+    
+    
+}
