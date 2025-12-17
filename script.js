@@ -13,7 +13,8 @@ fetch(API_URL)
     const avantages = document.getElementById("Avantages");
     const produits = document.getElementById("Produits");
     const produitscards = document.getElementById("produits-card")
-    const section3 = document.getElementById("section3");
+    const services = document.getElementById("Services");
+    const temoignages = document.getElementById("Temoignages")
 
 
 
@@ -45,35 +46,83 @@ fetch(API_URL)
             });
            
             const h3 =document.createElement("h3");
-            titreH2.textContent = "produits";
+            h3.textContent = "produits";
             produits.appendChild(h3);
- 
             data.produits.forEach(element => {
                 
                 let produitsCard = document.createElement("div");
  
                 let produitsimg = document.createElement("img")
                 produitsimg.src = element["image-url"];
- 
                 produitsCard.appendChild(produitsimg);
  
                 let produitsName = document.createElement("h4");
                 produitsName.textContent = element.nom;
- 
                 produitsCard.appendChild(produitsName);
  
                 let produitsDescription = document.createElement("p")
                 produitsDescription.textContent = element.description;
- 
                 produitsCard.appendChild(produitsDescription);
  
                 produitscards.appendChild(produitsCard);
- 
-
               
-                });
+                });  
+            
+            
+            
+            const h4 =document.createElement("h2");
+             h4.textContent = "services";
+             services.appendChild(h4);
+             
+                data.services.forEach(element => {
+                    
+                let servicesCard = document.createElement("div");
  
+                let servicesName = document.createElement("h4");
+                servicesName.textContent = element.nom;
+                servicesCard.appendChild(servicesName);
+ 
+                let servicesDescription = document.createElement("p");
+                servicesDescription.textContent = element.description;
+                servicesCard.appendChild(servicesDescription);
+ 
+                services.appendChild(servicesCard);
+
             });
 
+            const h5 =document.createElement("h2");
+             h5.textContent = "temoignages";
+             services.appendChild(h5);
+             
+                data.temoignages.forEach(element => {
+                    
+                let temoignagesCard = document.createElement("div");
+ 
+                let temoignagesPrenom = document.createElement("h4");
+                temoignagesPrenom.textContent = element.prenom;
+                temoignagesCard.appendChild(temoignagesPrenom);
+ 
+                let temoignagesTypeexp = document.createElement("p");
+                temoignagesTypeexp.textContent = element.typeExperience;
+                temoignagesCard.appendChild(temoignagesTypeexp);
+
+                let temoignagesCom = document.createElement("p");
+                temoignagesCom.textContent = element.commentaire;
+                temoignagesCard.appendChild(temoignagesCom);
+
+                let temoignagesNote = document.createElement("p");
+                temoignagesNote.textContent = element.note;
+                temoignagesCard.appendChild(temoignagesNote);
+ 
+                temoignages.appendChild(temoignagesCard);
+
+            });
+           
+           
+     
+                
+
+
+ });
 
 
